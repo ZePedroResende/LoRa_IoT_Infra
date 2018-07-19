@@ -38,15 +38,18 @@ class Sensor:
         # (waits for data to be sent and for the 2 receive windows to expire)
         self.s.setblocking(True)
 
+    #get light value 
     def light(self):
-        self.light_sensor.light()
-
+        return self.light_sensor.light()
+  
+    #get temperatur value
     def temperature(self):
-        self.air_sensor.temperature()
-
+        return self.air_sensor.temperature()
+    #get humidity value
     def humidity(self):
-        self.air_sensor.humidity()
-
+        return self.air_sensor.humidity()
+    
+    #get sensor data reading
     def params(self):
         data = {
                 "light": self.light(),
@@ -56,6 +59,7 @@ class Sensor:
         print(data)
         return json.dumps(data)
 
+    #send data to loragateway
     def send(self, data):
         # send some data
         self.s.send(data)
