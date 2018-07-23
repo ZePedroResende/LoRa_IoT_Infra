@@ -1,9 +1,17 @@
 # main.py -- put your code here!
 from sensor import Sensor
-
+import time
+import _thread
 devAdd = ''
 netKey = ""
 appKey = ""
 
 s = Sensor(devAdd, netKey, appKey)
-s.send(s.params())
+
+def send_message(s):
+    while True:
+        s.send(s.params())
+        time.sleep(60)
+
+
+_thread.start_new_thread(send_message,[s])
