@@ -39,7 +39,9 @@ defmodule Breeze.Mixfile do
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:tortoise, "~> 0.5.1"}
+      {:tortoise, "~> 0.5.1"},
+      {:bcrypt_elixir, "~> 1.0"},
+      {:corsica, "~> 1.0"}
     ]
   end
 

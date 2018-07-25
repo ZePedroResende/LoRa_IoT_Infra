@@ -35,6 +35,12 @@ defmodule BreezeWeb.Endpoint do
     key: "_breeze_key",
     signing_salt: "zzxvQE7x"
 
+  plug Corsica,
+    origins: ["http://localhost"],
+    log: [rejected: :error, invalid: :warn, accepted: :debug],
+    allow_headers: ["content-type"],
+    allow_credentials: true
+
   plug BreezeWeb.Router
 
   @doc """
