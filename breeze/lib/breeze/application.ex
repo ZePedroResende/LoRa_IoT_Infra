@@ -14,6 +14,7 @@ defmodule Breeze.Application do
       supervisor(BreezeWeb.Endpoint, []),
       # Start your own worker by calling: Breeze.Worker.start_link(arg1, arg2, arg3)
       # worker(Breeze.Worker, [arg1, arg2, arg3]),
+      Breeze.Mqtt_connection.Connection
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

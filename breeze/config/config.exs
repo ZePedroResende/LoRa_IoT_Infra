@@ -12,8 +12,8 @@ config :breeze,
 # Configures the endpoint
 config :breeze, BreezeWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "Uj+aH/Xfqkh+MO3aPtrG3h+FTWW0Flv69djudEErqNhv9mTt9XyhfDI5d5rUXmtz",
-  render_errors: [view: BreezeWeb.ErrorView, accepts: ~w(html json)],
+  secret_key_base: "VdNT4IsXzJN9pHksBwDFHnruiLavy1rE5C0bAz4qEMY4t629BYm7p1PQy3cJ2TCN",
+  render_errors: [view: BreezeWeb.ErrorView, accepts: ~w(json)],
   pubsub: [name: Breeze.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
