@@ -13,12 +13,13 @@ defmodule BreezeWeb.Router do
 
   scope "/api", BreezeWeb do
     pipe_through :api
-    post "/users/sign_in", UserController, :sign_in
+      post "/users/sign_in", UserController, :sign_in
+        post "/users", UserController, :create
 
-    scope "/auth" do
-      pipe_through :api_auth
-      resources "/users", UserController, except: [:new, :edit]
-    end
+      scope "/auth" do
+        pipe_through :api_auth
+          resources "/readings", ReadingController, only: [:index, :show]
+      end
   end
 
   defp ensure_authenticated(conn, _opts) do

@@ -16,6 +16,7 @@ defmodule Breeze.Mqtt_connection.Connection do
          user_name: "testepysense",
          password: "ttn-account-v2.bSok0Le8kEZfKfwVH7EXfDYMspEp9UkqQYjWuy1Kqmg",
          handler: {Handler, []},
+         keep_alive: 600,
          subscriptions: [{"+/devices/+/up",0}]
        ]}
     ]

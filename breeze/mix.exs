@@ -41,7 +41,8 @@ defmodule Breeze.Mixfile do
       {:cowboy, "~> 1.0"},
       {:tortoise, "~> 0.5.1"},
       {:bcrypt_elixir, "~> 1.0"},
-      {:corsica, "~> 1.0"}
+      {:corsica, "~> 1.0"},
+      {:poison, "~> 3.1"}
     ]
   end
 

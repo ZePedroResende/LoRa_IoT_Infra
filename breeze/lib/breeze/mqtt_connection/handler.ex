@@ -1,6 +1,8 @@
 defmodule Breeze.Mqtt_connection.Handler do
 
   require Logger
+  require Poison
+  alias Breeze.Data
 
   defstruct []
   alias __MODULE__, as: State
@@ -45,8 +47,8 @@ defmodule Breeze.Mqtt_connection.Handler do
   end
 
   @impl true
-  def handle_message(topic, publish, state) do
-    Logger.info("#{Enum.join(topic, "/")} #{inspect(publish)}")
+  def handle_message(_topic, publish, state) do
+    publish |> Poison.decode! |> (fn data -> %{reading: data, reading_time: data["metadata"]["time"]} end).() |> Data.create_reading
     {:ok, state}
   end
 
