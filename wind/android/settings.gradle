@@ -1,0 +1,3 @@
+rootProject.name = 'wind'
+
+include ':app'
