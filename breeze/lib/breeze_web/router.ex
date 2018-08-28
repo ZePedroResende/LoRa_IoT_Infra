@@ -13,8 +13,10 @@ defmodule BreezeWeb.Router do
 
   scope "/api", BreezeWeb do
     pipe_through :api
-      post "/users/sign_in", UserController, :sign_in
-        post "/users", UserController, :create
+      post "/sign_up", UserController, :create
+      scope "/users" do
+        post "/sign_in", UserController, :sign_in
+      end
 
       scope "/auth" do
         pipe_through :api_auth
