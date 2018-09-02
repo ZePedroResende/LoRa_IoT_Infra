@@ -2,9 +2,9 @@
 from sensor import Sensor
 import time
 import _thread
-devAdd = ''
-netKey = ""
-appKey = ""
+devAdd = 'devAdd'
+netKey = "netKey"
+appKey = "appKey"
 
 s = Sensor(devAdd, netKey, appKey)
 

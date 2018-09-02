@@ -22,8 +22,7 @@ export default class RNChart extends Component {
     super(props)
     this.state = {
       loading: true,
-      //url: 'http://ip_server:4000',
-      url: 'http://192.168.1.220:4000',
+      url: 'http://ip_server:4000',
       data: [],
       line: {
         title: 'Development smartphone in Indonesia',
